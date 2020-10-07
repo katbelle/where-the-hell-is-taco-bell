@@ -1,3 +1,10 @@
 // Place all the styles related to the Places controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('SourceSansPro/SourceSansPro-Regular.ttf') format('truetype');
+  src: url('SourceSansPro/SourceSansPro-Bold.ttf') format('truetype');
+  src: url('SourceSansPro/SourceSansPro-Italic.ttf') format('truetype');
+  }
