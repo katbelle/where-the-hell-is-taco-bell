@@ -15,3 +15,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import manual_input_address from './map'
+window.manual_input_address = manual_input_address

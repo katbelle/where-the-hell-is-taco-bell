@@ -1,31 +1,28 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <p id="notice"><%= notice %></p>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<h1>WHERE THE HELL IS TACOBELL???</h1>
+  <body>
+    <h1>WHERE THE HELL IS TACOBELL???</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <%= javascript_pack_tag 'map' %>
 
-  <tbody>
-    <% @places.each do |place| %>
-      <tr>
-        <td><%= place.name %></td>
-        <td><%= place.latitude %></td>
-        <td><%= place.longitude %></td>
-        <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
 
-<br>
+    <div id="floating-panel">
+          <input id="address" type="textbox" placeholder="City, State or Zip">
+          <input onClick="manual_input_address()" id="submit" type="button" value="Find Carboard food!!!">
+    </div>
 
-<%= link_to 'New Place', new_place_path %>
+    <br>
+
+    <%= link_to 'Add a taco hell', new_place_path %>
+
+  </body>
+
+</html>
