@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <p id="notice"><%= notice %></p>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-    <h1>WHERE THE HELL IS TACOBELL???</h1>
+<head>
+  <p id="notice"><%= notice %></p>
+  <script type="text/javascript" src="static/gmaps.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:google_maps_api_key] %>&libraries=places&callback=initMap">
+  </script>
+</head>
 
-    <%= javascript_pack_tag 'map' %>
+<body>
+  <h1>WHERE THE HELL IS TACOBELL???</h1>
 
-    <div id="map-container">
-      <div id="map"></div>
-    </div>
+  <%= javascript_pack_tag 'map' %>
 
-    <div id="floating-panel">
-          <input id="address" type="textbox" placeholder="City, State or Zip">
-          <input onClick="manual_input_address()" id="submit" type="button" value="Find Carboard food!!!">
-    </div>
+  <div id="map-container">
+    <div id="map"></div>
+  </div>
 
-    <br>
+  <div id="floating-panel">
+    <input id="address" type="textbox" placeholder="City, State or Zip">
+    <input onClick="manual_input_address()" id="submit" type="button" value="Find Carboard food!!!">
+  </div>
 
-    <%= link_to 'Add a taco hell', new_place_path %>
+  <br>
 
-  </body>
+  <%= link_to 'Add a taco hell', new_place_path %>
+
+</body>
 
 </html>

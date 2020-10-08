@@ -2,9 +2,7 @@ var map;
 var userInfoWindow;
 var pos;
 
-var script = document.createElement('script');
-script.src = 'https://maps.googleapis.com/maps/api/js?key=ADD_KEY_HERE&callback=initMap';
-script.defer = true;
+
 
 
 function nearbySearchCallback(results, status) {
@@ -40,7 +38,7 @@ function nearbySearchCallback(results, status) {
 
 function initMap() {
   console.log("I'm initializing the map")
-  map = new script.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     //why is this the center?
     center: {lat: 37.7886679, lng: -122.411499},
     zoom: 14,
@@ -78,7 +76,7 @@ function initMap() {
     }
     ]
   });
-  userInfoWindow = new script.maps.InfoWindow({map: map});
+  userInfoWindow = new google.maps.InfoWindow({map: map});
 
 
   // Try HTML5 geolocation.
@@ -90,7 +88,7 @@ function initMap() {
       };
 
       // built in library function for nearbysearch instead of parsing json string from API call
-      var service = new script.maps.places.PlacesService(map);
+      var service = new google.maps.places.PlacesService(map);
       // instead of using AJAX
       service.nearbySearch({
         location: pos,
@@ -120,7 +118,7 @@ function initMap() {
 
 function manual_input_address() {
 
-  var geocoder = new script.maps.Geocoder();
+  var geocoder = new google.maps.Geocoder();
   var address = document.getElementById('address').value;
 
   console.log("Manual input address function blast off")
