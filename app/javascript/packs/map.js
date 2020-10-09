@@ -39,7 +39,6 @@ function nearbySearchCallback(results, status) {
 function initMap() {
   console.log("I'm initializing the map")
   map = new google.maps.Map(document.getElementById('map'), {
-    //why is this the center?
     center: {lat: 37.7886679, lng: -122.411499},
     zoom: 14,
     mapTypeControl: false,
@@ -87,9 +86,7 @@ function initMap() {
         lng: position.coords.longitude
       };
 
-      // built in library function for nearbysearch instead of parsing json string from API call
       var service = new google.maps.places.PlacesService(map);
-      // instead of using AJAX
       service.nearbySearch({
         location: pos,
         radius: 10000,
