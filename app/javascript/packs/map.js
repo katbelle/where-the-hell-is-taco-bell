@@ -135,7 +135,6 @@ function manual_input_address() {
             type: ['restaurant'],
             keyword: ['tacobell']
           }, nearbySearchCallback);
-          map.setCenter(results[0].geometry.location);
            var marker = new google.maps.InfoWindow({
              // map: map,   <-- by commenting this out it gets rid of white empty pointer box
              position: results[0].geometry.location});

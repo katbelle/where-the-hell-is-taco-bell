@@ -3,7 +3,6 @@
 
 <head>
   <p id="notice"><%= notice %></p>
-  <script type="text/javascript" src="packs/map.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:google_maps_api_key] %>&libraries=places&callback=initMap">
   </script>
 </head>
